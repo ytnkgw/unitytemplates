@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MyLib.Utils
+namespace MyLib
 {
     // This script should be placed on a gameobject with a Text component.
     // It will change the text to show the frames per second the scene
@@ -25,7 +25,7 @@ namespace MyLib.Utils
         {
             // This line has the effect of smoothing out delta time.
             m_DeltaTime += (Time.deltaTime - m_DeltaTime) * k_SmoothingCoef;
-            
+
             // The frames per second is the number of frames this frame (one) divided by the time for this frame (delta time).
             float fps = 1.0f / m_DeltaTime;
 
