@@ -12,7 +12,11 @@ namespace MyLib
 
     public class Example : MonoBehaviour
     {
-
+        /*
+         * TIPS :: Use "m_" as a first expression of member valiables.
+         * 1. It makes it clear the difference between member valiables and function valiables.
+         * 2. It prevent time wasting activity; finding a name of valiables.
+         */
         [SerializeField]
         private int m_SampleInt;
 
