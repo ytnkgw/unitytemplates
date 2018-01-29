@@ -20,10 +20,16 @@ namespace MyLib
         [SerializeField]
         private int m_SampleInt;
 
+        /*
+         * TIPS : Use "static readonly" to constant value.
+         * TIPS : Use capital letter t constant value.
+         */
+        private static readonly int MAX_INT = 10;
+
 
         private void Start()
         {
-
+            m_SampleInt = MAX_INT + m_SampleInt;
         }
 
         private void Update()

@@ -1,0 +1,3 @@
+- Debug Mecanism
+- Test Case Mecanism
+- Naming rule of scripts
