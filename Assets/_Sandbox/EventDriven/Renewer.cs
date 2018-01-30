@@ -8,10 +8,11 @@ namespace Template.DesignPatterns.EventDriven
     public class Renewer : RaceBehaviour
     {
 
-        private void OnGoal()
-        {
+        // TODO : override this
+        //private void OnGoal()
+        //{
 
-        }
+        //}
 
     }
 

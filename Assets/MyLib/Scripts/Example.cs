@@ -13,18 +13,27 @@ namespace MyLib
     public class Example : MonoBehaviour
     {
         /*
-         * TIPS :: Use "m_" as a first expression of member valiables.
-         * 1. It makes it clear the difference between member valiables and function valiables.
-         * 2. It prevent time wasting activity; finding a name of valiables.
+         * TIPS : Order of listing valiables declaration.
+         * delegate > constant > member valiables
+         * 1. list from the things you don't use so much.
          */
-        [SerializeField]
-        private int m_SampleInt;
+        public delegate void ExampleEvent();
+        public ExampleEvent OnStart;
+        public ExampleEvent OnEnd;
 
         /*
          * TIPS : Use "static readonly" to constant value.
          * TIPS : Use capital letter t constant value.
          */
         private static readonly int MAX_INT = 10;
+
+        /*
+         * TIPS :: Use "m_" as a first expression of member valiables.
+         * 1. It makes it clear the difference between member valiables and function valiables.
+         * 2. It prevent time wasting activity; finding a name of valiables.
+         */
+        [SerializeField]
+        private int m_SampleInt;
 
 
         private void Start()

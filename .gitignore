@@ -32,3 +32,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Project Unique folder
+/Assets/StreamingAssets/ProjectUnique/*
+!/Assets/StreamingAssets/ProjectUnique/README.txt
