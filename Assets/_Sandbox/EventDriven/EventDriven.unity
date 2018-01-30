@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CharacterObjName: Character
-  m_Interface: {fileID: 838545155}
+  m_Interface: {fileID: 1144453116}
 --- !u!1 &294202969
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CharacterObjName: Character
-  m_Interface: {fileID: 838545155}
+  m_Interface: {fileID: 1144453116}
 --- !u!1 &332092389
 GameObject:
   m_ObjectHideFlags: 0
