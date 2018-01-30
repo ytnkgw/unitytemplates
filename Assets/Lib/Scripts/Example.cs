@@ -3,8 +3,6 @@
  * TIPS : this is the sign of why you write the code like below.
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MyLib

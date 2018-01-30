@@ -9,10 +9,10 @@ namespace Template.DesignPatterns.EventDriven
     {
 
         // TODO : override this
-        //private void OnGoal()
-        //{
-
-        //}
+        public override void OnGoal()
+        {
+            Debug.Log("[Renewer] OnGoal");
+        }
 
     }
 

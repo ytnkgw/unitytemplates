@@ -5,20 +5,20 @@ using UnityEngine;
 namespace Template.DesignPatterns.EventDriven
 {
 
-    public class RaceBehaviour : MonoBehaviour
+    public class Base : MonoBehaviour
     {
 
-        public virtual void OnSpawn()
+        public void OnSpawn()
         {
             Debug.Log("[RaceBehavior] OnSpawn");
         }
 
-        public virtual void OnStart()
+        public void OnStart()
         {
             Debug.Log("[RaceBehavior] OnStart");
         }
 
-        public virtual void OnGoal()
+        public void OnGoal()
         {
             Debug.Log("[RaceBehavior] OnGoal");
         }
