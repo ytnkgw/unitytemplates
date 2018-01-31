@@ -19,6 +19,8 @@ namespace Template.DesignPatterns.EventDriven
             Debug.Log("[Renewer] OnGoal");
         }
 
+
+
     }
 
 }

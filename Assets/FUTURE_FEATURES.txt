@@ -3,3 +3,4 @@
 - Naming rule of scripts
 - Editor Extentions
 - Best practive of architecture on Hierarchy
+- Cloner
