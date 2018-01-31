@@ -1,6 +1,7 @@
-- Debug Mecanism
-- Test Case Mecanism
 - Naming rule of scripts
 - Editor Extentions
 - Best practive of architecture on Hierarchy
 - Cloner
+- Shaders
+- Debug Mecanism
+- Test Case Mecanism

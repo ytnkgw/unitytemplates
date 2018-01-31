@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace Template.DesignPatterns.EventDriven
@@ -27,6 +28,11 @@ namespace Template.DesignPatterns.EventDriven
             {
                 transform.position -= (transform.right * m_MoveAmount);
             }
+        }
+
+        private void OnDestroy()
+        {
+            MessageBroker.Default.Publish<CharacterDead>(new CharacterDead { Msg = "[Character]"  });
         }
     }
 }

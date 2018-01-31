@@ -34,6 +34,12 @@ namespace MyLib
         private int m_SampleInt;
 
 
+        /*
+         * TIPS :: Draw a line "//-------------" before #region preprocessor
+         * 1. It makes boderline clearer
+         */
+        // ---------------
+        #region MonoBehavior
         private void Start()
         {
             m_SampleInt = MAX_INT + m_SampleInt;
@@ -43,6 +49,7 @@ namespace MyLib
         {
 
         }
+        #endregion
 
     }
 

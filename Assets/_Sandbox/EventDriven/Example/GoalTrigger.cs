@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace Template.DesignPatterns.EventDriven
 {
 
-    public class StartArea : MonoBehaviour
+    public class GoalTrigger : MonoBehaviour
     {
 
         [SerializeField]
@@ -13,13 +14,9 @@ namespace Template.DesignPatterns.EventDriven
 
         private void OnTriggerEnter(Collider other)
         {
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
             if (other.name == m_CharacterObjName)
             {
-                RaceManager.Instance.OnStart();
+                MessageBroker.Default.Publish<RaceGoal>(new RaceGoal { Msg = "[GoalTrigger]", Obj = other.gameObject});
             }
         }
 

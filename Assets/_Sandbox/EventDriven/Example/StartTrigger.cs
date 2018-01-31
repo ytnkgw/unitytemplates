@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace Template.DesignPatterns.EventDriven
 {
 
-    public class GoalArea : MonoBehaviour
+    public class StartTrigger : MonoBehaviour
     {
 
         [SerializeField]
         private string m_CharacterObjName;
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerExit(Collider other)
         {
             if (other.name == m_CharacterObjName)
             {
-                RaceManager.Instance.OnGoal();
+                MessageBroker.Default.Publish<RaceStart>(new RaceStart { Msg = "[StartTrigger]" });
             }
         }
 
