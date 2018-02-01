@@ -1,7 +1,8 @@
 - Naming rule of scripts
 - Editor Extentions
+	- Cloner
+	- Component finder
 - Best practive of architecture on Hierarchy
-- Cloner
 - Shaders
 - Debug Mecanism
 - Test Case Mecanism

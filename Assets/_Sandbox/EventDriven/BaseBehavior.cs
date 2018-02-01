@@ -6,6 +6,10 @@ namespace Template.DesignPatterns.EventDriven
 
     public abstract class BaseBehavior : MonoBehaviour
     {
+        /*
+         * you can use those method below to catch events.
+         * To inherite this class and make child class for specific use.
+         */
         // ---------------
         #region UniqueLifeCycle
         protected virtual void OnEvent01(Event01 arg) { }
@@ -25,6 +29,9 @@ namespace Template.DesignPatterns.EventDriven
         }
     }
 
+    /*
+     * List of the classes to filter MessageBroker
+     */
     // ---------------
     #region EventClass
     public class Event01
