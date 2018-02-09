@@ -1,3 +1,4 @@
+[FEATURES]
 - Naming rule of scripts
 - Editor Extentions
 	- Cloner
@@ -6,3 +7,5 @@
 - Shaders
 - Debug Mecanism
 - Test Case Mecanism
+
+[TODO]
