@@ -39,7 +39,7 @@ namespace MyLib
          * 1. It makes boderline clearer
          */
         // ---------------
-        #region MonoBehavior
+        #region MonoBehavior functions
         private void Start()
         {
             m_SampleInt = MAX_INT + m_SampleInt;
