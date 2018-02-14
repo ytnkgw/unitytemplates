@@ -3,6 +3,7 @@
 - Editor Extentions
 	- Cloner
 	- Component finder
+	- .cginc file creator
 - Best practive of architecture on Hierarchy
 - Shaders
 - Debug Mecanism

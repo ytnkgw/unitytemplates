@@ -26,28 +26,38 @@ namespace MyLib
         private static readonly int MAX_INT = 10;
 
         /*
-         * TIPS :: Use "m_" as a first expression of member valiables.
+         * TIPS :: Use "_" as a first expression of private member valiables.
          * 1. It makes it clear the difference between member valiables and function valiables.
          * 2. It prevent time wasting activity; finding a name of valiables.
          */
         [SerializeField]
-        private int m_SampleInt;
+        private int _sampleInt;
 
+        /*
+         * TIPS :: Use small letter as a first expression of public properties.
+         * 1. make difference clearer between properties and methods
+         */
+        public int sampleInt
+        {
+            get { return _sampleInt; }
+        }
 
         /*
          * TIPS :: Draw a line "//-------------" before #region preprocessor
          * 1. It makes boderline clearer
          */
-        // ---------------
+        // ---------------------------------------------
         #region MonoBehavior functions
         private void Start()
         {
-            m_SampleInt = MAX_INT + m_SampleInt;
+            _sampleInt = MAX_INT + _sampleInt;
+
+            if (OnStart != null) OnStart();
         }
 
-        private void Update()
+        private void OnDestroy()
         {
-
+            if (OnEnd != null) OnEnd();
         }
         #endregion
 
