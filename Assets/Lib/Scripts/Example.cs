@@ -50,6 +50,10 @@ namespace MyLib
         #region MonoBehavior functions
         private void Start()
         {
+            /*
+             * TIPS :: Comment "FIXME" for the port which should be fixed later.
+             */
+            // FIXME :: I'm not neccesary here
             _sampleInt = MAX_INT + _sampleInt;
 
             if (OnStart != null) OnStart();
