@@ -1,6 +1,7 @@
 ﻿/*
  * This example script is showing coding style in this project.
  * TIPS : this is the sign of why you write the code like below.
+ * Unity source code : https://bitbucket.org/Unity-Technologies/
  */
 
 using UnityEngine;
