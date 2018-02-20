@@ -57,13 +57,8 @@ namespace MyLib
 
             AfterAwake();
         }
-
-        /// <summary>
-        /// Awakeで実行したい処理を実装する
-        /// </summary>
-        protected virtual void AfterAwake()
-        {
-        }
+        
+        protected virtual void AfterAwake() {}
 
         private void OnDestroy()
         {
@@ -75,11 +70,6 @@ namespace MyLib
             AfterDestroy();
         }
 
-        /// <summary>
-        /// OnDestroyで実行したい処理を実装する
-        /// </summary>
-        protected virtual void AfterDestroy()
-        {
-        }
+        protected virtual void AfterDestroy() {}
     }
 }

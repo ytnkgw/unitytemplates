@@ -1,15 +1,13 @@
-//using System;
-//using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-//using UnityEngine;
 
 namespace MyLib
 {
-
 	public class Utils
 	{
-
+        /*
+         * Return queries in URI with Dictionary type.
+         */
 		public static Dictionary<string, string> ParseQueryString(string queryStr)
 		{
 			Dictionary<string, string> queryDic = new Dictionary<string, string>();
@@ -35,7 +33,5 @@ namespace MyLib
 
 			return queryDic;
 		}
-		
 	}
-
 }
