@@ -17,7 +17,6 @@ namespace MyLib
 
 		private void OnGUI()
 		{
-
 			// Draw symbols list
 		}
 		#endregion
