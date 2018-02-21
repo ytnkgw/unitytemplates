@@ -1,6 +1,7 @@
 [FEATURES]
-- Naming rule of scripts
+- Naming rule of script files
 - Editor Extentions
+	- "Scripting Define Symbols" editor extentions.
 	- Cloner
 	- Component finder
 	- .cginc file creator

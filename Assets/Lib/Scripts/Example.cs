@@ -22,7 +22,7 @@ namespace MyLib
 
         /*
          * TIPS : Use "static readonly" to constant value.
-         * TIPS : Use capital letter t constant value.
+         * TIPS : Use capital letters for constant value.
          */
         private static readonly int MAX_INT = 10;
 

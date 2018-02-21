@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace MyLib
 {
-	public class Utils
+	public static class Utils
 	{
         /*
          * Return queries in URI with Dictionary type.
