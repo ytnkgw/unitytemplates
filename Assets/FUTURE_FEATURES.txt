@@ -2,6 +2,8 @@
 - Naming rule of script files
 - Editor Extentions
 	- "Scripting Define Symbols" editor extentions.
+		http://baba-s.hatenablog.com/entry/2015/02/10/102941
+		http://kan-kikuchi.hatenablog.com/entry/ScriptingDefineSymbols
 	- Cloner
 	- Component finder
 	- .cginc file creator

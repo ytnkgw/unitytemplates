@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace MyLib
@@ -22,7 +22,7 @@ namespace MyLib
             return Instance._isDebug;
         }
 
-#if DEBUG // Define DEBUG on Scripting Define Symbols
+#if DEBUG_MODE // Define DEBUG_MODE on Scripting Define Symbols
         private void Start()
         {
             Debug.Log("Debug Mode.");
