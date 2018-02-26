@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace MyLib
+namespace MyLib.Editor
 {
 	public class SymbolsEditor
 	{

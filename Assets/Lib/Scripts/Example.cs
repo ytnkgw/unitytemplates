@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This example script is showing coding style in this project.
  * TIPS : this is the description why you write the code like below.
  * Unity source code : https://bitbucket.org/Unity-Technologies/
@@ -44,7 +44,7 @@ namespace MyLib
         }
 
         /*
-         * TIPS :: Use Lower Camel Case.
+         * TIPS : Use Lower Camel Case.
          * 1. make difference clearer between properties and methods
          */
         public int sampleInt
@@ -53,7 +53,7 @@ namespace MyLib
         }
 
         /*
-         * TIPS :: Use "_" as a first expression of private member valiables and Lower Camel Case.
+         * TIPS : Use "_" as a first expression of private member valiables and Lower Camel Case.
          * 1. It makes it clear the difference between member valiables and function valiables.
          * 2. It prevent time wasting activity; finding a name of valiables.
          */
@@ -61,7 +61,7 @@ namespace MyLib
         private int _sampleInt;
 
         /*
-         * TIPS :: Draw a line "//-------------" before #region preprocessor
+         * TIPS : Draw a line "//-------------" before #region preprocessor
          * 1. It makes boderline clearer
          */
         // ---------------------------------------------
@@ -69,9 +69,9 @@ namespace MyLib
         private void Start()
         {
             /*
-             * TIPS :: Comment "FIXME" for the port which should be fixed later.
+             * TIPS : Comment "FIXME" or "TODO" for the port which should be fixed later.
              */
-            // FIXME :: I'm not neccesary here
+            // FIXME : I'm not neccesary here
             _sampleInt = MAX_INT + _sampleInt;
 
             if (OnStart != null) OnStart();
