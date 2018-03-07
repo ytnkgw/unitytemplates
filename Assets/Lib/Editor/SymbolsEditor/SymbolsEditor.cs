@@ -29,6 +29,10 @@ namespace MyLib.Editor.SymbolsEditor
 		// Constructor
 		public SymbolsEditor()
 		{
+			/*
+			 * QESTION : I don't know "Resources" directory is best in this case.
+			 * Maybe I don't have to use "Resources" to load this scriptable object.
+			 */
 			_model = Resources.Load<SymbolsModel>(DATA_ASSET_NAME);
 
 			// Create new scriptable asset in Resources folder of SymbolsEditor.
