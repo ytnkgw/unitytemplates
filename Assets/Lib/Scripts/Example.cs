@@ -8,7 +8,6 @@ using UnityEngine;
 
 namespace MyLib
 {
-
     public class Example : MonoBehaviour
     {
         /*
@@ -29,8 +28,8 @@ namespace MyLib
          *   the things isn't used so much, which means non-core things.
          */
         public delegate void ExampleEvent();
-        public ExampleEvent OnStart;
-        public ExampleEvent OnEnd;
+        public ExampleEvent onStart;
+        public ExampleEvent onEnd;
 
         /*
          * TIPS : User upper camel case for enum.
@@ -74,18 +73,16 @@ namespace MyLib
             // FIXME : I'm not neccesary here
             _sampleInt = MAX_INT + _sampleInt;
 
-            if (OnStart != null) OnStart();
+            if (onStart != null) onStart();
         }
 
         private void OnDestroy()
         {
-            if (OnEnd != null) OnEnd();
+            if (onEnd != null) onEnd();
         }
 		/*
          * TIPS : Write which section ends next to "#endregion".
          */
 		#endregion // MonoBehavior functions
-
 	}
-
 }
