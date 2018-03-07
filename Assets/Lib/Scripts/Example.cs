@@ -64,7 +64,7 @@ namespace MyLib
          * TIPS : Draw a line "//-------------" before #region preprocessor
          * 1. It makes boderline clearer
          */
-        // ---------------------------------------------
+        // ---------------------------------
         #region MonoBehavior functions
         private void Start()
         {
@@ -81,8 +81,11 @@ namespace MyLib
         {
             if (OnEnd != null) OnEnd();
         }
-        #endregion
+		/*
+         * TIPS : Write which section ends next to "#endregion".
+         */
+		#endregion // MonoBehavior functions
 
-    }
+	}
 
 }

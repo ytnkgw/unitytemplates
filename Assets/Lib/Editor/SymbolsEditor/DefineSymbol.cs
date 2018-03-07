@@ -2,65 +2,65 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MyLib.Editor
+namespace MyLib.Editor.SymbolsEditor
 {
+	[System.Serializable]
 	public class DefineSymbol
 	{
-		private const string SYMBOL_INFO_SAVE_KEY_FORMAT = "SymbolInfoKeyFor{0}";
-
+		// ---------------------------------
 		#region Public Properties
 		// Symbol itself
 		public string key
 		{
 			get { return _key; }
+			set
+			{
+				if (_key != value) _edited = true;
+				_key = value;
+			}
 		}
 
+		// [SerializeField] // For debug use.
 		private string _key;
 
+		public bool enabled
+		{
+			get { return _enabled; }
+			set
+			{
+				if (_enabled != value) _edited = true;
+				_enabled = value;
+			}
+		}
+
+		// [SerializeField] // For debug use.
+		private bool _enabled;
+
+		public bool edited { get { return _edited; } }
+
+		// [SerializeField] // For debug use.
+		private bool _edited = false;
+
 		// Description to explain symbol
-		public string info
-		{
-			get { return _info; }
-		}
+		//public string info
+		//{
+		//	get { return _info; }
+		//}
+		//private string _info;
 
-		private string _info;
-
-		public bool isEnabled
-		{
-			get { return _isEnabled; }
-		}
-
-		private bool _isEnabled = true;
-		#endregion
+		#endregion // Public Properties
 
 
-		public DefineSymbol(string keyValue, bool isEnableFlag)
+		public DefineSymbol(string keyValue, bool isEnable, bool edited)
 		{
 			_key = keyValue;
-			_isEnabled = isEnableFlag;
+			_enabled = isEnable;
+			_edited = edited;
 		}
-
 
 		public void Save()
 		{
-
+			_edited = false;
 		}
-
-		public void Edit()
-		{
-
-		}
-
-		public void DeleteInfo()
-		{
-
-		}
-
-		#region Private methods
-		private string GetSymbolInfoSaveKey(string symbol)
-		{
-			return string.Format(SYMBOL_INFO_SAVE_KEY_FORMAT, symbol);
-		}
-		#endregion
 	}
 }

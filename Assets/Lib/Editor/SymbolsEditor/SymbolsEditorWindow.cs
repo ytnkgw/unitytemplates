@@ -4,50 +4,28 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace MyLib.Editor
+namespace MyLib.Editor.SymbolsEditor
 {
 	public class SymbolsEditorWindow : EditorWindow
 	{
-		// ---------------------------------------------
+		// ----------------------------
 		#region Private valiables
+		private SymbolsEditor _editor;
+
 		private ReorderableList _reorderableList;
 
-		private bool _isToogleChecked = false;
-
-		private List<string> _list = new List<string>() {"0", "1", "2", "3", "4"};
+		private bool _edited = false;
 		#endregion
 
 
-		// ---------------------------------------------
+		// ----------------------------
 		#region EditorWindow Behavior
 		private void OnEnable()
 		{
-			_reorderableList = new ReorderableList(_list, typeof(string));
-			_reorderableList.headerHeight = 1.0f;
-			_reorderableList.onAddCallback = (list) =>
-			{
-				_list.Add("New One");
-			};
-			_reorderableList.drawElementCallback = (rect, index, isActive, isFocused) =>
-			{
-				EditorGUILayout.BeginHorizontal();
-				var textFieldRect = rect;
-				textFieldRect.width -= 14.0f;
-				_list[index] = EditorGUI.TextField(textFieldRect, _list[index]);
-				var toggleRect = rect;
-				toggleRect.width = 10.0f;
-				toggleRect.height = 10.0f;
-				//var togglePos = new Vector2(rect.position.x + rect.width - 12.0f, rect.position.y + ((rect.height - 10.0f) / 2));
-				var togglePos = new Vector2(rect.position.x + rect.width - 12.0f, rect.position.y);
-				toggleRect.position = togglePos;
+			_editor = new SymbolsEditor();
+			_edited = false;
 
-				_isToogleChecked = EditorGUI.Toggle(toggleRect, _isToogleChecked);
-				EditorGUILayout.EndHorizontal();
-				//if (GUILayout.Button("Button " + element))
-				//{
-				//	Debug.Log("Tap Button " + element);
-				//}
-			};
+			InitList();
 		}
 
 		private void OnGUI()
@@ -60,35 +38,79 @@ namespace MyLib.Editor
 		#endregion
 
 
-		// ---------------------------------------------
+		// ----------------------------
 		#region Draw Compopnent method
+
+		// ----------------------------
+		#region List
 		// TODO : Add paddings.
+		private void InitList()
+		{
+			_reorderableList = new ReorderableList(_editor.model.symbols, typeof(string));
+			_reorderableList.headerHeight = 1.0f; // Set header size.
+			_reorderableList.drawElementCallback = DrawListCell;
+			_reorderableList.onAddCallback = OnClickAddBtn;
+			_reorderableList.onRemoveCallback = OnClickRemoveBtn;
+		}
+
 		private void DrawList()
 		{
-			//var windowRect = position;
-
-			//var rect = new Rect();
-			//rect.x = windowRect.x - 1.0f;
-			//rect.y = windowRect.y;
-			//rect.width = windowRect.width - 1.0f * 2.0f;
-			//rect.height = windowRect.height;
-			//_reorderableList.DoList(rect);
-
-			//EditorGUILayout.BeginVertical("box");
+			if (_reorderableList == null) InitList();
 			_reorderableList.DoLayoutList();
-			//EditorGUILayout.EndVertical();
 		}
+
+		private void DrawListCell(Rect rect, int index, bool isActive, bool isFocused)
+		{
+			EditorGUILayout.BeginHorizontal();
+
+			// Add textbox.
+			var textFieldRect = rect;
+			textFieldRect.width -= 14.0f;
+			_editor.model.symbols[index].key = EditorGUI.TextField(textFieldRect, _editor.model.symbols[index].key);
+			// Add checkbox.
+			var toggleRect = rect;
+			toggleRect.width = 10.0f;
+			toggleRect.height = 10.0f;
+			var togglePos = new Vector2(rect.position.x + rect.width - 12.0f, rect.position.y);
+			toggleRect.position = togglePos;
+			_editor.model.symbols[index].enabled = EditorGUI.Toggle(toggleRect, _editor.model.symbols[index].enabled);
+
+			EditorGUILayout.EndHorizontal();
+
+			// Check edited status.
+			if (_editor.model.symbols[index].edited) _edited = true;
+		}
+
+		private void OnClickAddBtn(ReorderableList targetList)
+		{
+			_editor.model.symbols.Add(new DefineSymbol("NEW_SYMBOL", false, true));
+		}
+
+		private void OnClickRemoveBtn(ReorderableList targetList)
+		{
+			// Remove cell.
+			_editor.model.symbols.RemoveAt(targetList.index);
+			_edited = true;
+		}
+		#endregion // List
+
 
 		private void DrawMessages()
 		{
-			EditorGUILayout.HelpBox("Invalid symbol name", MessageType.Error);
+			if (_edited)
+			{
+				EditorGUILayout.HelpBox(
+					"Please click the Save button below to preserve all the changes.",
+					MessageType.Warning);
+			}
 		}
 
 		private void DrawSave()
 		{
 			if (GUILayout.Button("Save"))
 			{
-				Debug.Log("click save btn.");
+				_editor.Save();
+				_edited = false;
 			}
 		}
 		#endregion
