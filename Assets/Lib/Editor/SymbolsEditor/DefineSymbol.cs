@@ -1,4 +1,3 @@
-
 namespace MyLib.Editor.SymbolsEditor
 {
 	[System.Serializable]
