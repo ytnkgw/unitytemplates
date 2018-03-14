@@ -1,9 +1,10 @@
 [TODO]
 - Add icon on custom window.
 
+- Add link to website of explaining "Scriptiong define symbol" on custom window.
+https://docs.unity3d.com/Manual/PlatformDependentCompilation.html
 
 [FIXME]
-
 - SymbolEditor.cs
 /*
  * FIXME : Use automatic refarence.
