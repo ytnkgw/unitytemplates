@@ -1,5 +1,6 @@
 [FEATURES]
 - Naming rule of script files
+- Best scoping of components, prefabs and scenes.
 - Editor Extentions
 	- Cloner
 	- Component finder
