@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Sandbox/MultiScenePattern/Example/Component01.unity
+    guid: aa5ea0575c72b9c4d8e0afd1c2b88135
+  - enabled: 1
+    path: Assets/_Sandbox/MultiScenePattern/Example/Component02.unity
+    guid: af1a4fc36bb11ea4592d9e2a60ba0d69
+  - enabled: 1
+    path: Assets/_Sandbox/MultiScenePattern/Example/Component03.unity
+    guid: 92211f9788747764a831febd1d73d802

@@ -84,5 +84,26 @@ namespace MyLib
          * TIPS : Write which section ends next to "#endregion".
          */
 		#endregion // MonoBehavior functions
+
+
+		/*
+		 * TIPS : Enclose test cases with #region TEST and #if TEST.
+		 * To modify and add defined symbols, check out "Window" > "Symbols".
+		 */
+		// ---------------------------------
+		#region TEST
+#if TEST
+		/*
+	     * TIPS : Put "t_" in head of valuable name for test case.
+	     */
+		private int t_int;
+
+		private void TestCase()
+		{
+			t_int++;
+			Debug.Log("[TEST] int : " + t_int.ToString());
+		}
+#endif
+		#endregion // TEST
 	}
 }
