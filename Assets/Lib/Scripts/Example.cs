@@ -43,10 +43,10 @@ namespace MyLib
         }
 
         /*
-         * TIPS : Use Lower Camel Case.
+         * TIPS : Use upper Camel Case for property.
          * 1. make difference clearer between properties and methods
          */
-        public int sampleInt
+        public int SampleInt
         {
             get { return _sampleInt; }
         }

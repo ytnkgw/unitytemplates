@@ -22,33 +22,26 @@ namespace Template.DesignPatterns.ScenesChain
 
 		private void OnEnable()
 		{
-			SceneManager.activeSceneChanged += OnActiveSceneChanged;
 			SceneManager.sceneLoaded += OnSceneLoaded;
 			SceneManager.sceneUnloaded += OnSceneUnloaded;
+			SceneManager.activeSceneChanged += OnActiveSceneChanged;
 		}
 
 		private void OnDisable()
 		{
-			SceneManager.activeSceneChanged -= OnActiveSceneChanged;
 			SceneManager.sceneLoaded -= OnSceneLoaded;
 			SceneManager.sceneUnloaded -= OnSceneUnloaded;
+			SceneManager.activeSceneChanged -= OnActiveSceneChanged;
 		}
 
 		private void Update()
 		{
-#if DEBUG_TEST
 			// ---------------------------------
 			#region TEST
-			if (Input.GetKeyUp(KeyCode.Alpha1))
-			{
-				SceneManager.LoadScene(1, LoadSceneMode.Additive);
-			}
-			else if (Input.GetKeyUp(KeyCode.Alpha2))
-			{
-				SceneManager.LoadScene(2, LoadSceneMode.Additive);
-			}
-			#endregion
+#if TEST
+			T_Update();
 #endif
+			#endregion
 		}
 		#endregion // MonoBehavior functions
 
@@ -70,12 +63,95 @@ namespace Template.DesignPatterns.ScenesChain
 		}
 		#endregion // SceneManager events
 
-#if DEBUG_TEST
 		// ---------------------------------
 		#region TEST
-		//private bool t_
+#if TEST
+		private enum T_SceneControlState : int
+		{
+			Load = 0,
+			Unload = 1,
+			Active = 2
+		}
 
-		#endregion
+		private T_SceneControlState t_controlState;
+		private T_SceneControlState T_ControlState
+		{
+			get
+			{
+				return t_controlState;
+			}
+			set
+			{
+				t_controlState = value;
+				Debug.Log("[TEST] ControlState is now " + t_controlState.ToString());
+			}
+		}
+
+
+		private void T_Update()
+		{
+			// Scene control.
+			if (Input.GetKeyUp(KeyCode.Alpha1))
+			{
+				switch (T_ControlState)
+				{
+					case T_SceneControlState.Load:
+						SceneManager.LoadScene(0, LoadSceneMode.Additive);
+						break;
+					case T_SceneControlState.Unload:
+						SceneManager.UnloadSceneAsync(0);
+						break;
+					case T_SceneControlState.Active:
+						//SceneManager.SetActiveScene();
+						break;
+				}
+			}
+			else if (Input.GetKeyUp(KeyCode.Alpha2))
+			{
+				switch (T_ControlState)
+				{
+					case T_SceneControlState.Load:
+						SceneManager.LoadScene(1, LoadSceneMode.Additive);
+						break;
+					case T_SceneControlState.Unload:
+						SceneManager.UnloadSceneAsync(1);
+						break;
+					case T_SceneControlState.Active:
+						//SceneManager.SetActiveScene();
+						break;
+				}
+			}
+			else if (Input.GetKeyUp(KeyCode.Alpha3))
+			{
+				switch (T_ControlState)
+				{
+					case T_SceneControlState.Load:
+						SceneManager.LoadScene(2, LoadSceneMode.Additive);
+						break;
+					case T_SceneControlState.Unload:
+						SceneManager.UnloadSceneAsync(2);
+						break;
+					case T_SceneControlState.Active:
+						//SceneManager.SetActiveScene();
+						break;
+				}
+			}
+
+			// Change scene control state.
+			if (Input.GetKeyUp(KeyCode.L))
+			{
+				T_ControlState = T_SceneControlState.Load;
+			}
+			else if (Input.GetKeyUp(KeyCode.U))
+			{
+				T_ControlState = T_SceneControlState.Unload;
+			}
+			else if (Input.GetKeyUp(KeyCode.A))
+			{
+				T_ControlState = T_SceneControlState.Active;
+			}
+		}
 #endif
+		#endregion
 	}
 }

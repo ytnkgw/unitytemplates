@@ -99,6 +99,7 @@ namespace MyLib.Editor.SymbolsEditor
 			SaveToModel();
 		}
 
+
 		private void SaveToModel()
 		{
 			// Preserve Symbols Editor list.
