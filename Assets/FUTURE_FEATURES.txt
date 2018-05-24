@@ -1,4 +1,6 @@
 [FEATURES]
+- Git submodules management
+- Unity Package Manager
 - Naming rule of script files
 - Best scoping of components, prefabs and scenes.
 - Editor Extentions
@@ -7,8 +9,10 @@
 	- .cginc file creator
 - Best practive of architecture on Hierarchy
 - Shaders
+- Local Logging System
 - Debug Mecanism
 - Test Case Mecanism
+- ProBuilder
 
 [NEXT]
 - Scene Independent design pattern
