@@ -76,7 +76,12 @@ namespace MyLib
             if (onStart != null) onStart();
         }
 
-        private void OnDestroy()
+		/*
+		 * TIPS : 物体の移動などはここで行う方が良い
+         */
+		private void FixedUpdate() {}
+
+		private void OnDestroy()
         {
             if (onEnd != null) onEnd();
         }

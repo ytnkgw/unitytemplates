@@ -1,5 +1,9 @@
 [FEATURES]
+- Exported app debug console. Debug class extention. Production console UI controled by command and symbol.
+- Extention of JsonUtility → Automatically refere json file from StreamingAssets.
 - Git submodules management
+- How to capselize valiables initialized by external file like json.
+→ Use constructor.
 - Unity Package Manager
 - Naming rule of script files
 - Best scoping of components, prefabs and scenes.
